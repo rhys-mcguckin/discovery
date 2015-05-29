@@ -12,6 +12,5 @@
   },
   "require-dev": {
     "phpunit/phpunit": "^4.6",
-    "rhys-mcguckin/discovery-examples": "*"
   }
 }
