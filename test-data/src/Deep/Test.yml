@@ -1,0 +1,5 @@
+type: 'test'
+subtype: 'depth-test'
+label: "Depth Test"
+description: "Depth Test"
+meta: "Test\\Base\\Meta"

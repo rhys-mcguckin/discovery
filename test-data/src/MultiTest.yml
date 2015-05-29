@@ -1,0 +1,14 @@
+-
+  type: 'test'
+  subtype: 'multitest'
+  label: 'Multi Test'
+  description: "Multi Test"
+  arguments:
+    - 'multitest'
+-
+  type: 'test'
+  subtype: 'multitest1'
+  label: "Multi Test"
+  description: "Multi Test"
+  arguments:
+    - 'multitest1'

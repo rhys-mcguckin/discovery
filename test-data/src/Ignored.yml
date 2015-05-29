@@ -1,0 +1,4 @@
+type: 'test'
+subtype: 'ignored'
+label: 'Ignored'
+description: 'Ignored'

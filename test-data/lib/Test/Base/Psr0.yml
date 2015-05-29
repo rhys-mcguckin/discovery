@@ -1,0 +1,4 @@
+type: 'test'
+subtype: 'psr0'
+label: 'PSR-0'
+description: 'PSR-0'

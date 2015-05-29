@@ -1,0 +1,13 @@
+{
+  "autoload": {
+    "psr-0": {
+      "Test\\Base\\": "lib/"
+    },
+    "psr-4": {
+      "Test\\Base\\": "src/"
+    }
+  },
+  "require": {
+    "test/parent": "*"
+  }
+}

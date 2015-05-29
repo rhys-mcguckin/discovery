@@ -1,0 +1,6 @@
+type: 'test'
+subtype: 'base'
+label: 'Test'
+description: 'Test'
+meta: "Discovery\\BogusMeta"
+
