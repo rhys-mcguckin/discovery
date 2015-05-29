@@ -1,4 +1,6 @@
 {
+  "name": "rhys-mcguckin/discovery",
+  "description": "Alternative method for discovering meta-information about a class.",
   "autoload": {
     "psr-4": {
       "Discovery\\": "src/"
