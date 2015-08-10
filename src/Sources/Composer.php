@@ -32,14 +32,26 @@ class Composer implements SourceInterface {
   protected $composer;
 
   /**
+   * @var string[]
+   */
+  protected $handled;
+
+  /**
    * Constructor.
    *
    * @param string $path
    *   The base path in which the composer.json is located.
+   *
+   * @param string $vendor_path
+   *   The root vendor path.
+   *
+   * @param string[] $handled
+   *   A list of the already included composer projects.
    */
-  public function __construct($path, $vendor_path = '') {
+  public function __construct($path, $vendor_path = '', $handled = array()) {
     $this->path = realpath($path);
     $this->vendor_path = realpath($vendor_path ? $vendor_path : $path . '/vendor');
+    $this->handled = $handled;
   }
 
   /**
@@ -88,8 +100,10 @@ class Composer implements SourceInterface {
 
       // Create a composer source for all requires.
       foreach ((array)$composer->$require as $path => $branch) {
-        if (file_exists($this->vendor_path . '/' . $path . '/composer.json')) {
-          $this->composer[] = new Composer($this->vendor_path . '/' . $path, $this->vendor_path);
+        $json = $this->vendor_path . '/' . $path . '/composer.json';
+        if (file_exists($json) && !in_array($json, $this->handled)) {
+          $this->handled[] = $json;
+          $this->composer[] = new Composer($this->vendor_path . '/' . $path, $this->vendor_path, $this->handled);
         }
       }
     }
